@@ -22,7 +22,7 @@ jobs:
           git add .
           git commit -m "Deploy'
           git remote add origin "$origin"
-          git push -f origin main:gh-pages
+          git push -f origin master:gh-pages
           cd ..
 
 # EOF
