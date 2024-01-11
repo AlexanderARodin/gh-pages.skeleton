@@ -13,16 +13,14 @@ jobs:
     steps:
     - name: Clone
       uses: actions/checkout@v4
+      
+    - name: Build
+      run : echo 'some build actions'
+      
     - name: Deploy
-      run : |
-          origin=$(git config --get remote.origin.url)
-          echo "$origin"
-          cd dist
-          git init
-          git add .
-          git commit -m 'Deploy'
-          git remote add origin "$origin"
-          git push -f origin master:gh-pages
-          cd ..
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
+        single-commit: true
 
 # EOF
