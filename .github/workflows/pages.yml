@@ -14,6 +14,6 @@ jobs:
     - name: Clone
       uses: actions/checkout@v4
     - name: Deploy
-      run : git subtree push -f --prefix "dist" origin gh-pages
+      run : git subtree push --force --prefix "dist" origin gh-pages
 
 # EOF
