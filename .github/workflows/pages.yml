@@ -15,7 +15,12 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Build
-      run : echo 'some build actions'
+      run : |
+        echo 'some build actions'
+        rm -rf dist
+        mkdir -p dist
+        cp assets/** dist/
+        ls ./dist/
       
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
