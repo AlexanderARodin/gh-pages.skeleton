@@ -1,0 +1,19 @@
+name: to-pages
+on:
+  push:
+    branches: 
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  make-pages:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone
+      uses: actions/checkout@v4
+    - name: Deploy
+      run : git subtree push --prefix "dist" origin gh-pages
+
+# EOF
