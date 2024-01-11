@@ -17,5 +17,12 @@ jobs:
       run : |
           origin=$(git config --get remote.origin.url)
           echo "$origin"
+          cd dist
+          git init
+          git add .
+          git commit -m "Deploy'
+          git remote add origin "$origin"
+          git push -f origin main:gh-pages
+          cd ..
 
 # EOF
